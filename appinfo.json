@@ -1,0 +1,55 @@
+{
+    "appKeys": {
+        "WEATHER_CITY_KEY": 2,
+        "WEATHER_ICON_KEY": 0,
+        "WEATHER_TEMPERATURE_KEY": 1
+    },
+    "capabilities": [
+        "location"
+    ],
+    "companyName": "mbhusty@gmail.com",
+    "longName": "RETRO PIXEL TIME",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "fonts/font (1).ttf",
+                "name": "PIXEL_FONT_32",
+                "type": "font"
+            },
+            {
+                "file": "fonts/font (1).ttf",
+                "name": "PIXEL_FONT_14",
+                "type": "font"
+            },
+            {
+                "file": "images/sun2.png",
+                "name": "IMAGE_SUN",
+                "type": "png"
+            },
+            {
+                "file": "images/snow2.png",
+                "name": "IMAGE_SNOW",
+                "type": "png"
+            },
+            {
+                "file": "images/rain2.png",
+                "name": "IMAGE_RAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/cloud2.png",
+                "name": "IMAGE_CLOUD",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "2",
+    "shortName": "RETRO PIXEL TIME",
+    "uuid": "39e66f7a-c2f4-4cc0-b93d-ae8bb92f0dd2",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
