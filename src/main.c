@@ -23,7 +23,8 @@ static const uint32_t WEATHER_ICONS[] = {
   RESOURCE_ID_IMAGE_SUN, // 0
   RESOURCE_ID_IMAGE_CLOUD, // 1
   RESOURCE_ID_IMAGE_RAIN, // 2
-  RESOURCE_ID_IMAGE_SNOW // 3
+  RESOURCE_ID_IMAGE_SNOW, // 3
+  RESOURCE_ID_IMAGE_DRIZ //4
 };
 
 static void sync_error_callback(DictionaryResult dict_error, AppMessageResult app_message_error, void *context) {
@@ -141,9 +142,9 @@ static void window_load(Window *window) {
   text_layer_set_font(s_city_layer, s_city_font);
 
   Tuplet initial_values[] = {
-    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 1),
-    TupletCString(WEATHER_TEMPERATURE_KEY, "1234\u00B0C"),
-    TupletCString(WEATHER_CITY_KEY, "St Pebblesburg"),
+    TupletInteger(WEATHER_ICON_KEY, (uint8_t) 0),
+    TupletCString(WEATHER_TEMPERATURE_KEY, "Wait"),
+    TupletCString(WEATHER_CITY_KEY, "please"),
   };
 
   app_sync_init(&s_sync, s_sync_buffer, sizeof(s_sync_buffer),
@@ -167,8 +168,8 @@ static void window_unload(Window *window) {
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
   update_time();
   
-  // Get weather update every 10 minutes
-  if(tick_time->tm_min % 15 == 0) {
+  // Get weather update every 30 minutes
+  if(tick_time->tm_min % 30 == 0) {
     // Begin dictionary
     DictionaryIterator *iter;
     app_message_outbox_begin(&iter);

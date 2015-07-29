@@ -3,6 +3,8 @@ function iconFromWeatherId(weatherId) {
     return 2;
   } else if (weatherId < 700) {
     return 3;
+    } else if (weatherId < 500) {
+    return 4;
   } else if (weatherId > 800) {
     return 1;
   } else {
@@ -12,7 +14,7 @@ function iconFromWeatherId(weatherId) {
 
 function fetchWeather(latitude, longitude) {
   var req = new XMLHttpRequest();
-  //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=55.77&lon=12.42', true);
+  //req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?lat=55.565556&lon=42.041668', true);
   req.open('GET', 'http://api.openweathermap.org/data/2.5/weather?'+'lat=' + latitude + '&lon=' + longitude + '&cnt=1', true);
   req.onload = function () {
     if (req.readyState === 4) {

@@ -13,6 +13,11 @@
     "resources": {
         "media": [
             {
+                "file": "images/driz.png",
+                "name": "IMAGE_DRIZ",
+                "type": "png"
+            },
+            {
                 "file": "fonts/font (1).ttf",
                 "name": "PIXEL_FONT_32",
                 "type": "font"
