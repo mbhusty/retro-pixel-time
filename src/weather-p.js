@@ -21,7 +21,8 @@ function fetchWeather(latitude, longitude) {
       if (req.status === 200) {
         console.log(req.responseText);
         var response = JSON.parse(req.responseText);
-        var temperature = Math.round(response.main.temp - 273.15);
+        var temperature = Math.round(1.8*(response.main.temp - 273.15)+32); //температура в форенгейтах
+        //var temperature = Math.round(response.main.temp - 273.15); //температура в цельсиях
         var icon = iconFromWeatherId(response.weather[0].id);
         var city = response.name;
         console.log(temperature);
@@ -29,7 +30,7 @@ function fetchWeather(latitude, longitude) {
         console.log(city);
         Pebble.sendAppMessage({
           'WEATHER_ICON_KEY': icon,
-          'WEATHER_TEMPERATURE_KEY': temperature + 'C',
+          'WEATHER_TEMPERATURE_KEY': temperature + 'F',
           'WEATHER_CITY_KEY': city
         });
       } else {
